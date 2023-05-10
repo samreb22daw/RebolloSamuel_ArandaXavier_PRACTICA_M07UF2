@@ -1,4 +1,4 @@
-const ciudad = "Barcelona";
+const ciudad = "Madrid";
 let latitud;
 let longitud;
 const url = `https://geocoding-api.open-meteo.com/v1/search?name=${ciudad}`;
@@ -14,7 +14,7 @@ fetch(url)
         fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitud}&longitude=${longitud}&hourly=temperature_2m&current_weather=true&timezone=auto&daily=precipitation_probability_max`)
             .then(response => response.json())
             .then(data => {
-                console.log(data)
+                console.log("data:",data)
                 let tempActual = data.current_weather.temperature;
                 let weatherCode = data.current_weather.weathercode;
                 let precipitacionMax = data.daily.precipitation_probability_max[0];
@@ -24,6 +24,10 @@ fetch(url)
                 document.getElementById('temperatura').innerHTML = tempActual;
                 document.getElementById('precipitacion').innerHTML = precipitacionMax;
                 document.getElementById('dia-hora').innerHTML = diaHora + "h";
+
+                console.log("weatherCode:",weatherCode);
+                document.getElementById('icono').src = `../assets/weather-icons/${weatherCode}.gif`
+
 
             }).catch(error => console.log("Error obteniendo la latitud y longitud de la ciudad: ",error));
     }).catch(error => console.log("Error obteniendo la latitud y longitud de la ciudad: ",error));
