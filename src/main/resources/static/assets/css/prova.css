@@ -1,0 +1,55 @@
+body {
+    font-family: "Montserrat";
+  }
+
+  .gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(120deg, #2980b9, #8e44ad);
+  }
+
+  .container{
+    border: 1px solid white;
+    background-color: rgb(255,255,255,0.4);
+    border-radius: 5%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 10%;
+    
+    display: flex;
+    
+    flex-direction: column;
+  }
+
+  .header-chart{
+    margin-top: -50px;
+    font-size: x-large;
+    font-weight: bold;
+  }
+
+  .info-chart{
+    display: flex;
+    align-items: center;
+    column-gap: 30px;
+  }
+
+  .info-chart img{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+  }
+
+  .week{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    margin-bottom: -40px;
+    border: 1px solid;
+  }
+
+
