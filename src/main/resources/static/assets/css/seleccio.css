@@ -1,0 +1,99 @@
+/* Estilos generales para el menú de navegación de la página */
+nav {
+  width: 100%;
+}
+
+.header-index {
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  height: 120px;
+}
+
+.logo {
+  text-decoration: none;
+  position: absolute;
+  color: white;
+  font-size: 38px;
+  line-height: 110px;
+  padding: 0px 100px 0px 100px;
+}
+
+.logo:hover {
+  cursor: pointer;
+  color: white;
+  opacity: 0.6;
+}
+
+nav ul {
+  float: right;
+  margin: 0px;
+  padding: 0px;
+  margin-right: 90px;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 50px 5px 0px 5px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+nav ul li a.menu-options {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  padding: 3px 8px 7px 8px;
+  margin: 0px 5px 0px 5px;
+}
+
+nav ul li::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: white;
+  display: block;
+  margin: auto;
+  transition: 0.5s;
+}
+
+nav ul li:hover::after {
+  width: 80%;
+}
+
+/* Estilos generales para las páginas de la aplicación */
+.gradient {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(120deg, #2980b9, #8e44ad);
+  height: 100%;
+}
+
+.formulari-seleccio {
+  position: relative;
+  border: 1px solid white;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px rgba(255, 255, 255, 0.3);
+  padding: 10px;
+  background-color: white;
+}
+
+.boto-seleccio {
+  width: 100%;
+  padding: 10px;
+  background: linear-gradient(120deg, #2980b9, #8e44ad);
+  border-radius: 5px;
+  font-size: 19px;
+  color: white;
+  border: none;
+  outline: none;
+}
+
+.boto-seleccio:hover {
+  transition: 0.5s;
+  opacity: 0.8;
+}

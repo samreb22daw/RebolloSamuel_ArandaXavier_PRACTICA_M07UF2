@@ -64,7 +64,7 @@ public class UsuarisController {
             System.out.println("Usuari no trobat");
             Usuari u = new Usuari(username, email);
             repositori.save(u);
-            return("seleccioCiutats");
+            return("seleccio");
         }
     }
     @GetMapping("/afegirCiutats")
@@ -92,8 +92,6 @@ public class UsuarisController {
             u.setCiutats(ciutats);
             repositori.save(u);
         });
-
-
 
         return "redirect:/home";
     }
