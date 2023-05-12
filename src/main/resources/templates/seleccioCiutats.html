@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Selecció de ciutat1</title>
+
+    <!-- Link de Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+    <!-- Exportamos una fuente de Google -->
+    <link
+            href="https://fonts.googleapis.com/css2?family=Bangers&family=Montserrat&display=swap"
+            rel="stylesheet"
+    />
+</head>
+<body>
+<h1>Selecció de ciutats</h1>
+<div class="container">
+    <form action="/afegirCiutats" method="GET" class="form-estils" style="border: 1px solid; box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); padding: 10px">
+        <div class="form-group">
+            <div class="form-group">
+                <label for="ciutat1">Selecciona la primera ciutat que vols guardar:</label>
+                <select name="ciutat1" class="form-control">
+                    <option value="Barcelona">Barcelona</option>
+                    <option value="Madrid">Madrid</option>
+                    <option value="Lisboa">Lisboa</option>
+                    <option value="Paris">Paris</option>
+                    <option value="Viena">Viena</option>
+                    <option value="Londres">Londres</option>
+                    <option value="Berlin">Berlin</option>
+                    <option value="Amsterdam">Amsterdam</option>
+                    <option value="Roma">Roma</option>
+                    <option value="Monaco">Monaco</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="ciutat2">Selecciona la segona ciutat que vols guardar:</label>
+                <select name="ciutat2" class="form-control">
+                    <option value="Madrid">Madrid</option>
+                    <option value="Barcelona">Barcelona</option>
+                    <option value="Lisboa">Lisboa</option>
+                    <option value="Paris">Paris</option>
+                    <option value="Viena">Viena</option>
+                    <option value="Londres">Londres</option>
+                    <option value="Berlin">Berlin</option>
+                    <option value="Amsterdam">Amsterdam</option>
+                    <option value="Roma">Roma</option>
+                    <option value="Monaco">Monaco</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="ciutat3">Selecciona la tercera ciutat que vols guardar:</label>
+                <select name="ciutat3" class="form-control">
+                    <option value="Lisboa">Lisboa</option>
+                    <option value="Madrid">Madrid</option>
+                    <option value="Barcelona">Barcelona</option>
+                    <option value="Paris">Paris</option>
+                    <option value="Viena">Viena</option>
+                    <option value="Londres">Londres</option>
+                    <option value="Berlin">Berlin</option>
+                    <option value="Amsterdam">Amsterdam</option>
+                    <option value="Roma">Roma</option>
+                    <option value="Monaco">Monaco</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-block btn-primary">Envia</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>
