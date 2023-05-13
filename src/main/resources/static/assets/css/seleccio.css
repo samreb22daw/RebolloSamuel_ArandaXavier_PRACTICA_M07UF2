@@ -20,10 +20,10 @@ nav {
   padding: 0px 100px 0px 100px;
 }
 
-.logo:hover {
-  cursor: pointer;
+.logo:hover, .logo label:hover {
   color: white;
   opacity: 0.6;
+  cursor: pointer;
 }
 
 nav ul {

@@ -8,7 +8,6 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
@@ -105,8 +104,19 @@ public class UsuarisController {
             @RequestParam() String ciudad,
             Model model) {
         model.addAttribute("ciudad", ciudad);
-        return("prova");
+        return("temps");
     }
+
+    @GetMapping("/actualizarCiudades")
+    public String actualizarCiudades(){
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String username = authentication.getPrincipal().toString()
+                .substring(authentication.getPrincipal().toString().indexOf("username=") + 9);
+
+        repositori.deleteById(username);
+        return("redirect:/home");
+    }
+
 
 }
 

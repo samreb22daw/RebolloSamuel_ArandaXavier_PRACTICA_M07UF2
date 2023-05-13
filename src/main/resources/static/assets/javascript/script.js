@@ -27,7 +27,7 @@ fetch(url)
                 document.getElementById('dia-hora').innerHTML = diaHora + "h";
 
                 console.log("weatherCode:",weatherCode);
-                document.getElementById('icono').src = `../assets/weather-icons/${weatherCode}.gif`
+                document.getElementById('icono').src = `/assets/weather-icons/${weatherCode}.png`
 
 
             }).catch(error => console.log("Error obteniendo la latitud y longitud de la ciudad: ",error));

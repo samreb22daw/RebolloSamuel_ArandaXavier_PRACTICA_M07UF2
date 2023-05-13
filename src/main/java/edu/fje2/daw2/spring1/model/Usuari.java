@@ -33,6 +33,9 @@ public class Usuari {
         return ciutats;
     }
 
+    public void destroyCiutats() {
+        this.ciutats = new ArrayList<String>();
+    }
     public void setCiutats(ArrayList<String> ciutats) {
         this.ciutats = ciutats;
     }
