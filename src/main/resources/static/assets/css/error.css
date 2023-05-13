@@ -20,7 +20,8 @@ nav {
   padding: 0px 100px 0px 100px;
 }
 
-.logo:hover, .logo label:hover {
+.logo:hover,
+.logo label:hover {
   color: white;
   opacity: 0.6;
   cursor: pointer;
@@ -73,30 +74,30 @@ nav ul li:hover::after {
   height: 100%;
 }
 
-.formulari-seleccio {
+.contenedor {
   position: relative;
+  background-color: white;
+  width: 65%;
   border: 1px solid white;
   border-radius: 10px;
   box-shadow: 5px 5px 10px rgba(255, 255, 255, 0.3);
-  padding: 10px;
-  background-color: white;
-  width: 80%;
-  margin: auto;
-;
+  padding: 20px 10px;
+  margin: 10% auto;
 }
 
-.boto-seleccio {
-  width: 100%;
-  padding: 10px;
+.error-boton {
+  width: 10%;
   background: linear-gradient(120deg, #2980b9, #8e44ad);
-  border-radius: 5px;
-  font-size: 19px;
+  padding: 10px;
+  border-radius: 10px;
+  text-decoration: none;
   color: white;
-  border: none;
-  outline: none;
 }
 
-.boto-seleccio:hover {
-  transition: 0.5s;
+.error-boton:hover {
+  text-decoration: none;
+  border-bottom: none;
+  color: white;
   opacity: 0.8;
+  transition: 0.5s;
 }
