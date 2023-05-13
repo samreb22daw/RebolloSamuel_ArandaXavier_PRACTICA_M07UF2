@@ -1,4 +1,5 @@
-const ciudad = "Madrid";
+const ciudad = document.getElementById('ciudad').innerHTML;
+
 let latitud;
 let longitud;
 const url = `https://geocoding-api.open-meteo.com/v1/search?name=${ciudad}`;

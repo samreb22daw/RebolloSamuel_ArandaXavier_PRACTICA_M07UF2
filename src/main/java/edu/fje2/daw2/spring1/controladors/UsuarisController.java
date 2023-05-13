@@ -43,8 +43,8 @@ public class UsuarisController {
         return usuaris;
     }
 
-    @RequestMapping(value = "/home", method = RequestMethod.GET)
-    String mostrarInici() {
+    @GetMapping("/home")
+    String mostrarInici(Model model) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         System.out.println("principal : " + authentication.getPrincipal());
 
@@ -57,8 +57,12 @@ public class UsuarisController {
         System.out.println("username = " + username);
         System.out.println("email = " + email);
 
-        if(repositori.findById(username).isPresent() )   {
+        if(repositori.findById(username).isPresent() && repositori.findById(username).get().getCiutats().size() > 0){
             System.out.println("Usuari trobat");
+            ArrayList<String> ciutats = new ArrayList<String>();
+            repositori.findById(username).get().getCiutats().forEach(ciutat ->ciutats.add(ciutat));
+            System.out.println("ciutatsHOME = " +ciutats);
+            model.addAttribute("ciutats", ciutats);
             return ("home");
         } else {
             System.out.println("Usuari no trobat");
@@ -67,7 +71,7 @@ public class UsuarisController {
             return("seleccio");
         }
     }
-    @GetMapping("/afegirCiutats")
+    @RequestMapping(value = "/afegirCiutats", method = RequestMethod.POST)
     public String afegirCiutats(
             @RequestParam() String ciutat1,
             @RequestParam() String ciutat2,
@@ -93,8 +97,17 @@ public class UsuarisController {
             repositori.save(u);
         });
 
-        return "redirect:/home";
+        return("redirect:/home");
     }
+
+    @GetMapping ("/veureTemps")
+    public String veureTemps(
+            @RequestParam() String ciudad,
+            Model model) {
+        model.addAttribute("ciudad", ciudad);
+        return("prova");
+    }
+
 }
 
 

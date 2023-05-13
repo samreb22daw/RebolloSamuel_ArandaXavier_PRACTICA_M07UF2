@@ -3,8 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
+    <script>
+        window.onload = function (){
+            let ciudad1 = document.getElementById("ciudad1").getAttribute("ciudad");
+            let ciudad2 = document.getElementById("ciudad2").getAttribute("ciudad");
+            let ciudad3 = document.getElementById("ciudad3").getAttribute("ciudad");
+            document.getElementById("ciudad1").value = ciudad1;
+            document.getElementById("ciudad2").value = ciudad2;
+            document.getElementById("ciudad3").value = ciudad3;
+        }
+    </script>
 </head>
 <body>
-HOME
+
+<form action="/veureTemps" method="GET">
+    <input th:attr="ciudad=${ciutats[0]}" id="ciudad1" type="hidden" name="ciudad">
+    <button th:text="'Anar a '+${ciutats[0]}"></button>
+</form>
+<form action="/veureTemps" method="GET">
+    <input th:attr="ciudad=${ciutats[1]}" id="ciudad2" type="hidden" name="ciudad">
+    <button th:text="'Anar a '+${ciutats[1]}"></button>
+</form>
+<form action="/veureTemps" method="GET">
+    <input th:attr="ciudad=${ciutats[2]}" id="ciudad3" type="hidden" name="ciudad">
+    <button th:text="'Anar a '+${ciutats[2]}"></button>
+</form>
 </body>
 </html>
