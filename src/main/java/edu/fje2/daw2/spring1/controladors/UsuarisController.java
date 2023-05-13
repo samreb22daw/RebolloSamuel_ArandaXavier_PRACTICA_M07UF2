@@ -57,7 +57,7 @@ public class UsuarisController {
         System.out.println("username = " + username);
         System.out.println("email = " + email);
 
-        if(repositori.findById(username).isPresent()) {
+        if(repositori.findById(username).isPresent() )   {
             System.out.println("Usuari trobat");
             return ("home");
         } else {

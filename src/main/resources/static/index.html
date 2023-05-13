@@ -11,6 +11,15 @@
     
     <!-- Link al CSS -->
     <link rel="stylesheet" href="/assets/css/index.css">
+
+    <!-- Pequeño JavaScript incrustado -->
+    <script>
+        const boton = document.getElementById('inicio-sesion');
+
+        const handleClick = () => {
+            window.location.href="/home";
+        }
+    </script>
 </head>
 <body>
 
@@ -18,11 +27,11 @@
         <!-- Header de la página -->
         <div class="header-index">
             <nav>
-                <a href="index.html" class="logo">
+                <a href="/" class="logo">
                     <label>TheWeatherClot</label>
                 </a>
                 <ul>
-                    <li><a class="menu-options" href="#">LOGIN</a></li>
+                    <li><a class="menu-options" href="/home">LOGIN</a></li>
                 </ul>
             </nav>
         </div>
@@ -45,7 +54,7 @@
                     <div class="logo-boton">
                         <img src="/assets/images/google-logo.png" alt="Imagen del logo de Google" width="30px">
                     </div>
-                    <div class="inicio-sesion">Iniciar sesión con Google</div>
+                    <div class="inicio-sesion" onclick="handleClick()">Iniciar sesión con Google</div>
                 </div>
             </div>
         </div>
