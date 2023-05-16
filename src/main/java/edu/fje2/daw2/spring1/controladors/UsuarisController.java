@@ -99,7 +99,7 @@ public class UsuarisController {
         return("redirect:/home");
     }
 
-    @GetMapping ("/veureTemps")
+    @PostMapping("/veureTemps")
     public String veureTemps(
             @RequestParam() String ciudad,
             Model model) {

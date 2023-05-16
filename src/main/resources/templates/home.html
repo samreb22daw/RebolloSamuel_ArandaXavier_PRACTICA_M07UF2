@@ -1,9 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-
+    <title>Home</title>
+    <!-- Exportamos una fuente de Google -->
+    <link
+            href="https://fonts.googleapis.com/css2?family=Bangers&family=Montserrat&display=swap"
+            rel="stylesheet"
+    />
+    <!--Stylesheet-->
+    <link rel="stylesheet" href="/assets/css/home.css">
     <script>
         window.onload = function (){
             let ciudad1 = document.getElementById("ciudad1").getAttribute("ciudad");
@@ -17,17 +22,56 @@
 </head>
 <body>
 
-<form action="/veureTemps" method="GET">
-    <input th:attr="ciudad=${ciutats[0]}" id="ciudad1" type="hidden" name="ciudad">
-    <button th:text="'Anar a '+${ciutats[0]}"></button>
-</form>
-<form action="/veureTemps" method="GET">
-    <input th:attr="ciudad=${ciutats[1]}" id="ciudad2" type="hidden" name="ciudad">
-    <button th:text="'Anar a '+${ciutats[1]}"></button>
-</form>
-<form action="/veureTemps" method="GET">
-    <input th:attr="ciudad=${ciutats[2]}" id="ciudad3" type="hidden" name="ciudad">
-    <button th:text="'Anar a '+${ciutats[2]}"></button>
-</form>
+<!-- Header de la página -->
+<div class="header-index">
+    <nav>
+        <a href="/" style="color: white;">
+            <label class="logo">TheWeatherClot</label>
+        </a>
+        <ul>
+            <li><a class="menu-options" href="/home">HOME</a></li>
+        </ul>
+    </nav>
+</div>
+
+<!-- Contenido de la página -->
+<div class="cards">
+    <div class="card card1">
+        <div class="container">
+            <img src="/assets/images/ciudad1.png" alt="Ciudad 1">
+        </div>
+        <div class="details">
+            <h3 th:text="${ciutats[0]}"></h3>
+            <form action="/veureTemps" method="POST">
+                <input th:attr="ciudad=${ciutats[0]}" id="ciudad1" type="hidden" name="ciudad">
+                <button th:text="'Consultar temperatures de '+${ciutats[0]}"></button>
+            </form>
+        </div>
+    </div>
+    <div class="card card2">
+        <div class="container">
+            <img src="/assets/images/ciudad2.jpg" alt="Ciudad 2">
+        </div>
+        <div class="details">
+            <h3 th:text="${ciutats[1]}"></h3>
+            <form action="/veureTemps" method="POST">
+                <input th:attr="ciudad=${ciutats[1]}" id="ciudad2" type="hidden" name="ciudad">
+                <button th:text="'Consultar temperatures de '+${ciutats[1]}"></button>
+            </form>
+        </div>
+    </div>
+    <div class="card card3">
+        <div class="container">
+            <img src="/assets/images/ciudad3.jpg" alt="Ciudad 3">
+        </div>
+        <div class="details">
+            <h3 th:text="${ciutats[2]}"></h3>
+            <form action="/veureTemps" method="POST">
+                <input th:attr="ciudad=${ciutats[2]}" id="ciudad3" type="hidden" name="ciudad">
+                <button th:text="'Consultar temperatures de '+${ciutats[2]}"></button>
+            </form>
+        </div>
+    </div>
+</div>
 </body>
 </html>

@@ -1,38 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>prova</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bangers&family=Montserrat&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/assets/css/temps.css" />
-  </head>
-  <body>
-    <div class="gradient">
-      <div class="container">
-        <div class="header-chart">
-          <p id="ciudad" th:text="${ciudad}"></p>
+<head>
+  <meta charset="UTF-8" />
+  <title>prova</title>
+  <link
+          href="https://fonts.googleapis.com/css2?family=Bangers&family=Montserrat&display=swap"
+          rel="stylesheet"
+  />
+  <link rel="stylesheet" href="/assets/css/temps.css" />
+</head>
+<body>
+<div class="gradient">
+  <div class="container">
+    <p class="ciudad" id="ciudad">Barcelona</p>
+    <div class="arriba">
+      <div class="izquierda">
+        <img class="icono" id="icono"  src="0.png"></img>
+      </div>
+      <div class="derecha">
+        <p >Temperatura: <label id="temperatura"></label></p>
+        <p >Día: <label id="dia"></label></p>
+        <p >Hora: <label id="hora"></label></p>
+        <p >Precipitacion Max: <label id="precipitacion"></label></p>
+      </div>
+    </div>
+
+    <div class="abajo">
+      <div  class="dia-container">
+        <p id="dia1" class="dia">16/05/2023</p>
+        <div class="info-pequena">
+          <img id="imagen1" src="0.png" class="imagen-pequena"></img>
+          <div>
+            <p id="temp1">21ºC</p>
+            <p id="precipitacion1">30%</p>
+          </div >
         </div>
-        <div class="info-chart">
-          <img id="icono" src="" alt="icono" />
-          <div class="contenido">
-            <p id="dia-hora"></p>
-            <p ><span id="temperatura"></span>ºC</p>
-            <p>Precipitación máxima: <span id="precipitacion"></span>%</p>
+
+      </div>
+
+      <div  class="dia-container">
+        <p id="dia2" class="dia">16/05/2023</p>
+        <div class="info-pequena">
+          <img id="imagen2" src="0.png" class="imagen-pequena"></img>
+          <div>
+            <p id="temp2">21ºC</p>
+            <p id="precipitacion2">30%</p>
           </div>
         </div>
-        <div class="week">
-          <p>1</p>
-          <p>2</p>
-          <p>3</p>
-          <p>4</p>
-          <p>5</p>
-          <p>6</p>
+      </div>
+
+      <div  class="dia-container">
+        <p id="dia3" class="dia">16/05/2023</p>
+        <div class="info-pequena">
+          <img id="imagen3" src="0.png" class="imagen-pequena"></img>
+          <div>
+            <p id="temp3">21ºC</p>
+            <p id="precipitacion3">30%</p>
+          </div>
+        </div>
+      </div>
+
+      <div  class="dia-container">
+        <p id="dia4" class="dia">16/05/2023</p>
+        <div class="info-pequena">
+          <img id="imagen4" src="0.png" class="imagen-pequena"></img>
+          <div>
+            <p id="temp4">21ºC</p>
+            <p id="precipitacion4">30%</p>
+          </div>
+        </div>
+      </div>
+
+      <div  class="dia-container">
+        <p id="dia5" class="dia">16/05/2023</p>
+        <div class="info-pequena">
+          <img id="imagen5" src="0.png" class="imagen-pequena"></img>
+          <div>
+            <p id="temp5">21ºC</p>
+            <p id="precipitacion5">30%</p>
+          </div>
+        </div>
+      </div>
+
+      <div  class="dia-container">
+        <p id="dia6" class="dia">16/05/2023</p>
+        <div class="info-pequena">
+          <img id="imagen6" src="0.png" class="imagen-pequena"></img>
+          <div>
+            <p id="temp6">21ºC</p>
+            <p id="precipitacion6">30%</p>
+          </div>
         </div>
       </div>
     </div>
-    <script src="/assets/javascript/script.js"></script>
-  </body>
+  </div>
+</div>
+  <script src="/assets/javascript/script.js"></script>
+</body>
 </html>
