@@ -32,6 +32,7 @@ fetch(url)
                         document.getElementById('hora').innerHTML = hora;
 
                         console.log("weatherCode:",weatherCode);
+                        document.getElementById('icono').src = `/assets/weather-icons/${weatherCode}.png`
 
                         for(let i = 1; i < 7; i++){
                                 console.log("DIARIO:",data.daily.time[i]);
@@ -41,7 +42,7 @@ fetch(url)
                                 document.getElementById(`imagen${i}`).src = `/assets/weather-icons/${data.daily.weathercode[i]}.png`;
 
                         }
-                        //document.getElementById('icono').src = `/assets/weather-icons/${weatherCode}.png`
+
 
 
                 }).catch(error => console.log("Error obteniendo la latitud y longitud de la ciudad: ",error));

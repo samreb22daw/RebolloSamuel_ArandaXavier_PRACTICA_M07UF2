@@ -6,11 +6,11 @@ import java.util.ArrayList;
 
 public class Usuari {
     @Id
-    public String username;
+    private String username;
 
-    public String email;
+    private String email;
 
-    public ArrayList<String> ciutats;
+    private ArrayList<String> ciutats;
 
     public Usuari() {
     }

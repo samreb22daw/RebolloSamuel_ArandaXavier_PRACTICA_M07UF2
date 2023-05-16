@@ -17,6 +17,9 @@
             document.getElementById("ciudad1").value = ciudad1;
             document.getElementById("ciudad2").value = ciudad2;
             document.getElementById("ciudad3").value = ciudad3;
+            document.getElementById('img-ciudad1').src = `/assets/images/${ciudad1}.png`;
+            document.getElementById('img-ciudad2').src = `/assets/images/${ciudad2}.png`;
+            document.getElementById('img-ciudad3').src = `/assets/images/${ciudad3}.png`;
         }
     </script>
 </head>
@@ -38,22 +41,22 @@
 <div class="cards">
     <div class="card card1">
         <div class="container">
-            <img src="/assets/images/ciudad1.png" alt="Ciudad 1">
+            <img id="img-ciudad1" alt="Ciudad 1">
         </div>
         <div class="details">
-            <h3 th:text="${ciutats[0]}"></h3>
+            <h3 th:text="${ciutats[0]}" th:data-ciudad="${ciutats[0]}"></h3>
             <form action="/veureTemps" method="POST">
-                <input th:attr="ciudad=${ciutats[0]}" id="ciudad1" type="hidden" name="ciudad">
+                <input th:attr="ciudad=${ciutats[0]}"  id="ciudad1" type="hidden" name="ciudad">
                 <button th:text="'Consultar temperatures de '+${ciutats[0]}"></button>
             </form>
         </div>
     </div>
     <div class="card card2">
         <div class="container">
-            <img src="/assets/images/ciudad2.jpg" alt="Ciudad 2">
+            <img id="img-ciudad2" alt="Ciudad 2">
         </div>
         <div class="details">
-            <h3 th:text="${ciutats[1]}"></h3>
+            <h3 th:data-ciudad="${ciutats[1]}" th:text="${ciutats[1]}"></h3>
             <form action="/veureTemps" method="POST">
                 <input th:attr="ciudad=${ciutats[1]}" id="ciudad2" type="hidden" name="ciudad">
                 <button th:text="'Consultar temperatures de '+${ciutats[1]}"></button>
@@ -62,16 +65,20 @@
     </div>
     <div class="card card3">
         <div class="container">
-            <img src="/assets/images/ciudad3.jpg" alt="Ciudad 3">
+            <img id="img-ciudad3" alt="Ciudad 3">
         </div>
         <div class="details">
-            <h3 th:text="${ciutats[2]}"></h3>
+            <h3 th:text="${ciutats[2]}" th:data-ciudad="${ciutats[2]}"></h3>
             <form action="/veureTemps" method="POST">
-                <input th:attr="ciudad=${ciutats[2]}" id="ciudad3" type="hidden" name="ciudad">
+                <input th:attr="ciudad=${ciutats[2]}"  id="ciudad3" type="hidden" name="ciudad">
                 <button th:text="'Consultar temperatures de '+${ciutats[2]}"></button>
             </form>
         </div>
     </div>
+</div>
+<div class="container-boton">
+    <a href="/actualizarCiudades" class="boton-home">Actualizar ciudades</a>
+    <a href="/borrarUsuario" class="boton-home">Borrar registro</a>
 </div>
 </body>
 </html>

@@ -117,7 +117,15 @@ public class UsuarisController {
         return("redirect:/home");
     }
 
+    @GetMapping("/borrarUsuario")
+    public String borrarUsuario(){
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String username = authentication.getPrincipal().toString()
+                .substring(authentication.getPrincipal().toString().indexOf("username=") + 9);
 
+        repositori.deleteById(username);
+        return("redirect:/");
+    }
 }
 
 
