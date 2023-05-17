@@ -16,12 +16,11 @@ import java.util.List;
 
 /**
  * Controlador de usuaris
+ * @desc Ens permet comunicarnos entre les vistes i el model
  * @author Xavier Aranda / Samuel Rebollo
  * @version 1.0
  * @modul M07UF2
- * @Professor Sergi Grau
  */
-
 @Controller
 @SessionAttributes("usuaris")
 public class UsuarisController {
@@ -29,9 +28,17 @@ public class UsuarisController {
     @Autowired
     private UserDetailsService userDetailsService;
 
+    /***
+     * Definim una instància de UsuariRepositori per poder fer la persistència de dades a MongoDB
+     */
     @Autowired
     private UsuariRepositori repositori;
 
+    /***
+     * Definim un model de dades anomenat usuaris
+     *
+     * @return -> Retorna el model de dades usuaris
+     */
     @ModelAttribute("usuaris")
     public List<Usuari> inicialitzar() {
 
@@ -42,6 +49,15 @@ public class UsuarisController {
         return usuaris;
     }
 
+    /***
+     * Aquest mètode farà la seva feina en el moment d'accedir mitjançant el mètode GET a la ruta /home
+     * El mètode comproba si l'usuari ja té assignades les seves 3 ciutats favorites a MongoDB. En cas de no tenirles, mostra
+     la vista "SELECCIO" on l'usuari haurà d'escollir le seves 3 ciutats favorites. En cas de tenirles guardades a MongoDB, mostra la vista
+     "HOME" amb les 3 ciutats favorites que ha escollit l'usuari
+     *
+     * @param model -> Utilitzarem el model per passar un atribut per utilitzar a les vistes mitjançant Thymeleaf
+     * @return -> En funció de la sentència If - Else, retornem una vista o una altre
+     */
     @GetMapping("/home")
     String mostrarInici(Model model) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -70,6 +86,15 @@ public class UsuarisController {
             return("seleccio");
         }
     }
+
+    /**
+     * Métode per Afegir Ciutats
+     * @param ciutat1 -> Agafem la primera ciutat que ha escollit l'usuari com a favorita
+     * @param ciutat2 -> Agafem la segona ciutat que ha escollit l'usuari com a favorita
+     * @param ciutat3 -> Agafem la tercera ciutat que ha escollit l'usuari com a favorita
+     * Aquests paràmetres guarden les ciutats que l'usuari envia i les guarda al repositori.
+     * @return -> Ens retorna el mètode home
+    */
     @RequestMapping(value = "/afegirCiutats", method = RequestMethod.POST)
     public String afegirCiutats(
             @RequestParam() String ciutat1,
@@ -99,6 +124,12 @@ public class UsuarisController {
         return("redirect:/home");
     }
 
+    /**
+     * Ens permet veure el temps de determinada ciutat
+     * @param ciudad -> Agafem la ciutat que vol
+     * @param model -> Utilitzarem el model per passar un atribut per utilitzar a les vistes mitjançant Thymeleaf
+     * @return Ens retorna vista del temps
+     */
     @PostMapping("/veureTemps")
     public String veureTemps(
             @RequestParam() String ciudad,
@@ -107,6 +138,10 @@ public class UsuarisController {
         return("temps");
     }
 
+    /**
+     * Metode per a actualitzar les ciutats de l'usuari
+     * @return Ens retorna el metode home
+     */
     @GetMapping("/actualizarCiudades")
     public String actualizarCiudades(){
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -117,6 +152,11 @@ public class UsuarisController {
         return("redirect:/home");
     }
 
+    /***
+     * Mètode per esborrar les dades d'un usuari guardades a MongoDB, esborra el registre de l'usuari
+     *
+     * @return -> Ens redirecciona a l'arrel del projecte
+     */
     @GetMapping("/borrarUsuario")
     public String borrarUsuario(){
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
