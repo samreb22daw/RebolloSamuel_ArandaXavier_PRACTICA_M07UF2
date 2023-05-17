@@ -15,11 +15,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Controlador de clients
- * Verifica el funcionament de curl
- * @author sergi.grau@fje.edu
- * @version 1.0 21.3.19
- * @version 2.0 25.3.21
+ * Controlador de usuaris
+ * @author Xavier Aranda / Samuel Rebollo
+ * @version 1.0
+ * @modul M07UF2
+ * @Professor Sergi Grau
  */
 
 @Controller
